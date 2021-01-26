@@ -97,7 +97,7 @@ Use the higher-order function getWinners to do the following:
 
 function getWinners(array, finalsCallback) {
     const winners = [];
-    const teams = finalsCallback(array).filter(team => `${team["Home Team Name"]} ${team["Home Team Goals"]} ${team["Away Team Name"]} ${team["Away Team Goals"]}`);
+    const teams = finalsCallback(array);
     teams.forEach((team,index) => {
 
         if (team["Home Team Goals"] > team["Away Team Goals"]) {
@@ -109,7 +109,18 @@ function getWinners(array, finalsCallback) {
     return winners;
 }
 
-// console.log(getWinners(fifaData, getFinals));
+// Alternatively:
+// fucntion getWinners(array,finalsCallback) {
+//     let winners = finalsCallback(array).map((team) => {
+//         if (team["Home Team Goals"] > team["Away Team Goals"]) {
+//             winners.push(teams[index]["Home Team Name"]);
+//         } else {
+//             winners.push(teams[index]["Away Team Name"]);
+//         }
+//     });
+// }
+
+console.log(getWinners(fifaData, getFinals));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use the higher-order function getWinnersByYear to do the following:
