@@ -109,6 +109,20 @@ function getWinners(array, finalsCallback) {
     return winners;
 }
 
+// Alternatively
+
+// function getWinners(array, finalsCallback) {
+//     const winners = finalsCallback(array).map(function(team) {
+//         if (team["Home Team Goals"] > team["Away Team Goals"]) {
+//             return (team["Home Team Name"]);
+//         } else {
+//             return (team["Away Team Name"]);
+//         }
+        
+//     })
+//     return winners;
+// }
+
 // Alternatively:
 // fucntion getWinners(array,finalsCallback) {
 //     let winners = finalsCallback(array).map((team) => {
